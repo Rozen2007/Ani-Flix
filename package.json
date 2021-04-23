@@ -11,7 +11,9 @@
     "mongoose": "^5.11.16",
     "patch-package": "^6.2.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@vercel/node": "^1.10.0"
+  },
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
