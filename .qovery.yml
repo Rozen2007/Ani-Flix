@@ -1,0 +1,11 @@
+---
+application:
+  name: "ani-flix"
+  project: "aniflix"
+  organization: "QoveryCommunity"
+routers:
+- name: "main-ani-flix"
+  routes:
+  - application_name: "ani-flix"
+    paths:
+    - "/*"
