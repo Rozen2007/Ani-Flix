@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/images/favicon.ico"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+    <title><%=title%> Episode <%=episode%></title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg  bg-dark">
+      <div class="container-fluid">
+          <a class="navbar-brand " href="/">Ani-flix</a>
+          <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon "></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarNav">
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="/animelist/0">Anime List</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/help">Help</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+    <div class="container episode-page">
+    <section class="anime-info">
+      <h4 class=" ">Anime Info</h4>
+          <div class="card my-1">
+            <div class="row ">
+              <div class="col-md-4">
+                  <img src="<%= data[0].img %>" class="w-100 px-3">
+                </div>
+                <div class="col-md-8 px-1">
+                  <div class="card-block px-3">
+                    <h5 class="card-title text-white py-1"><%=title%></h5>
+                    <p class="card-text text-white">Type:<%=data[0].category%></p>
+                    <p class="card-text text-white"> <%=data[0].synopsis%></p>
+                    <p class="card-text text-white"> Genres:<%=data[0].genres%></p>
+                    <p class="card-text text-white"> Released:<%=data[0].released%></p>
+                    <p class="card-text text-white">Status:<%=data[0].status%></p>
+                    <p class="card-text text-white">Other Name(s):<%=data[0].otherName%></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </section>
+    <section class="episode-list my-2 ">
+      <div class="row align-items-center">
+        <div class="col d-flex justify-content-start"><a  class="btn btn-secondary" href="javascript:void(0)" onclick="redirectToPrev('<%=data[0].totalEpisodes%>')">Prev</a></div>
+        <div class="col d-flex justify-content-center">
+          <div class="dropdown ">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              Select Episode
+            </button>
+            <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenuButton1">
+              <% const j = data[0].totalEpisodes%>
+              <% for (var i =1; i <=j;  i++ ) { %>
+              <li><a class="dropdown-item" href="/episodepage/<%= links%><%=i%>">Ep <%=i %></a></li>
+              <% } %>
+            </ul>
+          </div>
+        </div>
+        <div class="col d-flex justify-content-end"><a  class="btn btn-secondary " href="javascript:void(0)" onclick="redirectToNext('<%=data[0].totalEpisodes%>')">Next</a></div>
+      </div>
+    </section>
+      <div class="current-episode d-flex justify-content-center">
+        <p class="text-white">You are watching:Episode <%=episode%></p>
+      </div>
+        <div class="resp-container">
+          <iframe class="resp-iframe" src="https://<%= data[0].servers[0].iframe%>" allowfullscreen></iframe>
+        </div>
+    <div class="alert alert-success my-2" role="alert">
+      Make sure to use an adblocker as i'm not the one hosting these videos.
+    </div>
+    <footer class="bg-dark  ">   
+      <div class="row">
+        <section class="col footer-text">
+          <div class="text-end p-3">
+            <a  href="/help">Help!</a>
+          </div>
+        </section>
+        <section class="col footer-icon">
+          <a href="#top">
+          <img src="/images/footerarrow.png"  class=" rounded-circle float-end my-1">
+        </a>
+        </section>
+      </div>
+    </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://vjs.zencdn.net/7.10.2/video.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.js"
+    integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+    <script src="/js/anime.js"></script>
+  </body>
+</html>

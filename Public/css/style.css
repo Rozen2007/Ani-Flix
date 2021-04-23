@@ -1,0 +1,155 @@
+body{
+    background-color: black;
+    font-family: "Potta One", cursive;
+}
+/* Container colors */
+.mainpagecontainer , .animelist-body, .errorpage, .anime-page , .episode-page , .help-page{
+    background-color: #212529;
+}
+/* Navbar custom*/
+nav a.navbar-brand, h3.cardheading{
+    color:  #00ff00;
+    background: -webkit-linear-gradient(#e35d5d, 
+    #adbdf0
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+nav button.navbar-toggler{
+    border-color:  #00ff00;
+}
+nav span.navbar-toggler-icon{
+    background-image: url("/images/hamburger.png");
+}
+nav a.nav-link{
+    color: white;
+}
+/*mainpage cover image */
+#coverimage{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+#coverimage img{
+    max-width: 100%;
+    height: auto;
+}
+
+/* CARDS STYLING*/
+.card{
+    background-color:#212529 ;
+    border: none;
+}
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+.card-body a{
+    font-size: small;
+    color: white;
+    text-decoration: none;
+}
+/*FOOTER STYLING */
+footer section.footer-icon img{
+   background-color: #e35d5d;
+   border-radius: 25px;
+}
+footer{
+    border-top: 4px inset;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+}
+footer a:link ,footer a:visited , footer a:hover{
+    font-size: medium;
+    color: #939393;
+    text-decoration: none;
+}
+
+.alphabet-list{
+    display: flex;
+    justify-content: space-evenly; 
+} 
+.alphabets li{
+    display: inline;
+} 
+.alphabets a{
+ text-decoration: none;
+ color: white;
+}
+.alphabets a:hover{
+    text-decoration: none;
+    color: #00ff00;
+   }
+ul.alphabets{
+    border: 1px solid white;
+    padding-left: 0;
+}
+.alphabets h3{
+    background-color: #00ff00;
+}
+.animelist-alert{
+    font-size: small;
+}
+/*Anime list section*/
+.anime-list li#anime-listgroup{
+    background-color: #212529;
+}
+li#anime-listgroup a{
+    color: whitesmoke;
+    text-decoration: none;
+}
+li#anime-listgroup a:hover{
+    color: #00ff00;
+}
+/*ERROR PAGE CONTENT*/
+.error-image a{
+    color: #00ff00;
+    text-decoration: none;
+}
+.error-image a:hover {
+    color:#009900;
+    text-decoration: none;
+
+}
+/*EPISODE PAGE */
+.anime-info h4{
+    background-color: #00ff00;
+}
+.anime-info p{
+    font-size: small;
+}
+.anime-info h5{
+    font-size: small;
+}
+.anime-info{
+    border: 1px solid white;
+}
+.scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
+.resp-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+}
+.resp-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+/*HELP PAGE*/
+
+@media screen and (max-width:700px){
+    .card-img-top{
+        height:auto;
+    }
+}
